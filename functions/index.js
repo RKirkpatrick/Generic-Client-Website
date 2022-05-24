@@ -83,8 +83,11 @@ app.post(
 		}
 		console.log("Early access form passed validation.");
 
+		// =============================================================================
+		// Disabled for demo
+		// =============================================================================
 		// Append to data to google sheet
-		let jwt = getJwt();
+		/*let jwt = getJwt();
 		let apiKey = apiKeyFile.sheetsKey;
 		// Google sheet with spreadsheetId needs to be shared with: spreadsheet-writer@theory-parking.iam.gserviceaccount.com
 		let spreadsheetId = "1Bp44uRyXGV30PkLoKspN_GMH1_xNzm55_om9PVis0jg";
@@ -94,7 +97,7 @@ app.post(
 			req.body.firstname + " " + req.body.lastname,
 			req.body.email,
 		];
-		appendSheetRow(jwt, apiKey, spreadsheetId, range, row);
+		appendSheetRow(jwt, apiKey, spreadsheetId, range, row);*/
 
 		res.status(200).type("text/plain").end("OK");
 	}
@@ -138,7 +141,10 @@ app.post(
 		}
 		console.log("Contact form passed validation.");
 
-		let mailOptions = {
+		// =============================================================================
+		// Disabled for demo
+		// =============================================================================
+		/*let mailOptions = {
 			from: req.body.email,
 			to: reciever,
 			subject: "Raedam Contact Form",
@@ -153,7 +159,7 @@ app.post(
 				req.body.message,
 		};
 
-		sendMail(mailOptions);
+		sendMail(mailOptions);*/
 
 		res.status(200).type("text/plain").end("OK");
 	}
@@ -181,8 +187,11 @@ app.post(
 		}
 		console.log("Join form passed validation.");
 
+		// =============================================================================
+		// Disabled for demo
+		// =============================================================================
 		// Compose text for email
-		let mailText =
+		/*let mailText =
 			"Name: " +
 			req.body.firstname +
 			" " +
@@ -214,7 +223,7 @@ app.post(
 			text: mailText,
 		};
 
-		sendMail(mailOptions);
+		sendMail(mailOptions);*/
 
 		res.status(200).type("text/plain").end("OK");
 	}
@@ -230,8 +239,8 @@ app.get("*", (req, res) => {
 });
 
 // Define the Firebase function that will act as Express application
-// Note: This `frontFacingNodeServer` must match with `/firebase.json` rewrites rule.
-exports.frontFacingNodeServer = functions.https.onRequest(app);
+// Note: This `frontFacingNodeServer3` must match with `/firebase.json` rewrites rule.
+exports.frontFacingNodeServer3 = functions.https.onRequest(app);
 
 // Helper functions
 let apiKeyFile = require("./keys.json");
@@ -301,9 +310,12 @@ function appendSheetRow(jwt, apiKey, spreadsheetId, range, row) {
 	);
 }
 
+// =============================================================================
+// Disabled for demo
+// =============================================================================
 // Node mailer
-const sender = require("./email.json");
-const reciever = "omar@raedam.co";
+/*const sender = require("./email.json");
+const reciever = "omar@*****.co";
 const oauth2Client = new OAuth2(
 	sender.clientId,
 	sender.clientSecret,
@@ -319,7 +331,7 @@ let transporter = nodemailer.createTransport({
 	secure: true,
 	auth: {
 		type: "OAuth2",
-		user: "noreply@raedam.co",
+		user: "noreply@******.co",
 		clientId: sender.clientId,
 		clientSecret: sender.clientSecret,
 		refreshToken: sender.refreshToken,
@@ -336,7 +348,7 @@ function sendMail(mailOptions) {
 		}
 		transporter.close();
 	});
-}
+}*/
 
 // reCaptcha
 async function getScore(token) {
