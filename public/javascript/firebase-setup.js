@@ -1,14 +1,13 @@
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-var firebaseConfig = {
-	apiKey: "AIzaSyC6n_0MqCxrZIIWM_smT9eVjKRMeBpWMG8",
-	authDomain: "theory-parking.firebaseapp.com",
-	databaseURL: "https://theory-parking.firebaseio.com",
-	projectId: "theory-parking",
-	storageBucket: "theory-parking.appspot.com",
-	messagingSenderId: "192548003681",
-	appId: "1:192548003681:web:75dfba17644c49dd9caf20",
-	measurementId: "G-6S8CGR6TWP",
+const firebaseConfig = {
+	apiKey: "AIzaSyAxdGbBiX_L9uIu0KotlTbWzgH9roIVnls",
+	authDomain: "generic-sensor-display.firebaseapp.com",
+	projectId: "generic-sensor-display",
+	storageBucket: "generic-sensor-display.appspot.com",
+	messagingSenderId: "78111896061",
+	appId: "1:78111896061:web:0c35e617c78c8f9a60e994",
+	measurementId: "G-T5QB6511Z3",
 };
 window.dataLayer = window.dataLayer || [];
 function gtag() {
@@ -17,11 +16,11 @@ function gtag() {
 gtag("js", new Date());
 if (window.location.hostname == "localhost") {
 	//Can be removed for deployment
-	gtag("config", "UA-148151012-3", { debug_mode: true });
-	gtag("config", "G-6S8CGR6TWP", { debug_mode: true });
+	// gtag("config", "UA-148151012-3", { debug_mode: true });
+	gtag("config", "G-T5QB6511Z3", { debug_mode: true });
 } else {
-	gtag("config", "UA-148151012-3");
-	gtag("config", "G-6S8CGR6TWP");
+	// gtag("config", "UA-148151012-3");
+	gtag("config", "G-T5QB6511Z3");
 }
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
