@@ -7,7 +7,7 @@
 const functions = require("firebase-functions");
 // Express for routing and Handlebars for templating
 const express = require("express");
-const exphbs = require("express-handlebars");
+const { engine: exphbs } = require("express-handlebars");
 const app = express();
 // For Google Sheets API
 const { google } = require("googleapis");
