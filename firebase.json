@@ -1,21 +1,20 @@
 {
-  "hosting": {
-    "public": "public",
-    "site": "raedam-front-facing-website",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ],
-    "rewrites": [
-      {
-        "source": "**",
-        "function": "frontFacingNodeServer"      
-      }
-    ]
-  },
-  "functions": {
-    "engines": {"node": "10"},
-    "runtime": "nodejs10"
-  }
+	"hosting": {
+		"site": "client-design-1",
+		"public": "public",
+		"ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+		"rewrites": [
+			{
+				"source": "**",
+				"function": "frontFacingNodeServer1"
+			}
+		]
+	},
+	"functions": {
+		"engines": {
+			"node": "10"
+		},
+		"runtime": "nodejs10",
+		"source": "functions"
+	}
 }
